@@ -1,7 +1,7 @@
 {
   "name": "MLNR",
   "version": "0.0.1",
-  "description": "Node.js sample app for OpenShift 3",
+  "description": "MLNR app deployed to Openshift 3",
   "main": "server.js",
   "dependencies": {
     "chai": "^3.5.0",
