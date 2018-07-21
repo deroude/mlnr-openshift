@@ -25,8 +25,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use(express.static(path.join(__dirname, 'dist/mlnr-openshift')));
 app.use('/api', rest);
 
-const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT;
-const ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP;
+const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL;
 
 if (!mongoURL) {
