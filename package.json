@@ -1,34 +1,60 @@
 {
-  "name": "MLNR",
-  "version": "0.0.1",
-  "description": "MLNR app deployed to Openshift 3",
-  "main": "server.js",
-  "dependencies": {
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
-    "ejs": "^2.4.1",
-    "express": "^4.13.4",
-    "mocha": "^2.4.5",
-    "mongodb": "^2.1.16",
-    "morgan": "^1.7.0",
-    "object-assign":"4.1.0"
-  },
-  "engine": {
-    "node": "*",
-    "npm": "*"
-  },
+  "name": "mlnr-openshift",
+  "version": "0.0.0",
   "scripts": {
-    "start": "node server.js",
-    "test": "IP=0.0.0.0 PORT=3030 mocha --timeout 5000 tests/*_test.js"
+    "ng": "ng",
+    "start": "nodemon --experimental-modules server/index.mjs",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^6.0.3",
+    "@angular/common": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
+    "@angular/core": "^6.0.3",
+    "@angular/forms": "^6.0.3",
+    "@angular/http": "^6.0.3",
+    "@angular/platform-browser": "^6.0.3",
+    "@angular/platform-browser-dynamic": "^6.0.3",
+    "@angular/router": "^6.0.3",
+    "core-js": "^2.5.4",
+    "rxjs": "^6.0.0",
+    "zone.js": "^0.8.26",
+    "express": "4.16.3",
+    "express-session": "^1.15.6",
+    "path": "^0.12.7",
+    "mongoose": "^5.2.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "body-parser": "^1.18.3"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
-  "license": "CC-BY-1.0",
-  "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
-  },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "devDependencies": {
+    "@angular/compiler-cli": "^6.0.3",
+    "@angular-devkit/build-angular": "~0.6.8",
+    "typescript": "~2.7.2",
+    "@angular/cli": "~6.0.8",
+    "@angular/language-service": "^6.0.3",
+    "@types/jasmine": "~2.8.6",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.2.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~1.7.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.0",
+    "karma-jasmine": "~1.1.1",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.3.0",
+    "ts-node": "~5.0.1",
+    "tslint": "~5.9.1",
+    "mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "nodemon": "^1.18.3"
+  }
 }
