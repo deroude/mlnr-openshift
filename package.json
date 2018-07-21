@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "nodemon --experimental-modules server/index.mjs",
+    "start": "nodemon server/index.js",
     "build": "ng build",
     "test": "echo 'no tests'",
     "lint": "ng lint",

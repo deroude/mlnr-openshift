@@ -1,15 +1,13 @@
 //  OpenShift sample Node application
-import express from "express";
-import path from "path";
-import mongoose from "mongoose";
-import passport from "passport";
-import passportLocal from "passport-local";
-import session from "express-session";
-import bodyParser from "body-parser";
-import { User } from "./domain";
-import rest from "./rest";
-import expose from './expose.js';
-const { __dirname } = expose;
+const express = require("express");
+const path = require("path");
+const mongoose = require("mongoose");
+const passport = require("passport");
+const passportLocal = require("passport-local");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const User = require("./domain");
+const rest = require("./rest");
 
 const app = express();
 app.use(bodyParser.json());
@@ -28,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'dist/mlnr-openshift')));
 app.use('/api', rest);
 
 const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT;
-const ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP ;
+const ip = process.env.IP || process.env.OPENSHIFT_NODEJS_IP;
 let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL;
 
 if (!mongoURL) {
@@ -59,3 +57,5 @@ console.log("Connecting to Mongo | " + mongoURL);
 mongoose.connect(mongoURL);
 
 app.listen(port, ip);
+
+module.exports = app;
