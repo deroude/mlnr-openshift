@@ -56,6 +56,7 @@ if (!mongoURL) {
 console.log("Connecting to Mongo | " + mongoURL);
 mongoose.connect(mongoURL);
 
+console.log("Connecting on " + ip + ":" + port);
 app.listen(port, ip);
 
 module.exports = app;
