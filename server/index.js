@@ -56,9 +56,15 @@ if (!mongoURL) {
 }
 
 console.log("Connecting to Mongo | " + mongoURL);
-mongoose.connect(mongoURL);
+mongoose.connect(mongoURL, { useNewUrlParser: true }, err => {
+  if (err) throw err;
+  console.log(`Successfully connected to database.`);
+});
 
 console.log("Connecting on " + ip + ":" + port);
-app.listen(port, ip);
+app.listen(port, ip, (err) => {
+  if (err) throw err;
+  console.log(`Successfully started server`);
+});
 
 module.exports = app;
