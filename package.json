@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "echo 'no tests'",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "echo 'no e2e'"
   },
   "private": true,
   "dependencies": {
